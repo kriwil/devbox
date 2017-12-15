@@ -2,14 +2,15 @@
 # ubuntu 16.04
 apt-get update
 apt-get install -y \
-	apt-transport-https \
-	ca-certificates \
-	curl \
-	python3 \
-	python3-pip \
-	software-properties-common \
-	tmux \
-	zsh
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    direnv \
+    python3 \
+    python3-pip \
+    software-properties-common \
+    tmux \
+    zsh
 
 # docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -27,6 +28,6 @@ apt-get install -y docker neovim
 
 apt-get -y upgrade
 
-ln -s /vagrant/oh-my-zsh /home/ubuntu/.oh-my-zsh
-ls -s /vagrant/dotfiles/zshrc.linux /home/ubuntu/.zshrc
+ln -s /home/ubuntu/dotfiles/zshrc.linux /home/ubuntu/.zshrc
+
 chsh -s /usr/bin/zsh ubuntu

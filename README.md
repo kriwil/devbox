@@ -8,3 +8,7 @@ ubuntu 16.04
 - neovim
 - tmux
 - zsh
+
+### notes
+
+- add ssh folder as ssh-devbox before running `vagrant up` for the first time
