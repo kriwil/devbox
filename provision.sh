@@ -25,6 +25,8 @@ add-apt-repository ppa:neovim-ppa/stable
 apt-get update
 apt-get install -y docker neovim
 
-apt-get upgrade
+apt-get -y upgrade
 
-chsh -s /usr/bin/zsh
+ln -s /vagrant/oh-my-zsh /home/ubuntu/.oh-my-zsh
+ls -s /vagrant/dotfiles/zshrc.linux /home/ubuntu/.zshrc
+chsh -s /usr/bin/zsh ubuntu
