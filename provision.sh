@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+USER=$1
+
 # ubuntu 16.04
 apt-get update
 apt-get install -y \
@@ -31,11 +33,12 @@ apt-get install -y docker neovim golang-go
 
 apt-get -y upgrade
 
-ln -s /home/ubuntu/dotfiles/zshrc.linux /home/ubuntu/.zshrc
-ln -s /home/ubuntu/dotfiles/tmux.conf /home/ubuntu/.tmux.conf
-
 chsh -s /usr/bin/zsh ubuntu
 
+su $USER -c 'ln -s /home/ubuntu/dotfiles/zshrc.linux /home/$USER/.zshrc'
+su $USER -c 'ln -s /home/ubuntu/dotfiles/tmux.conf /home/$USER/.tmux.conf'
+
 # git & friends
-go get -u github.com/github/hub
-go get -u github.com/zaquestion/lab
+su $USER -c 'go get -u github.com/github/hub'
+su $USER -c 'go get -u github.com/zaquestion/lab'
+
