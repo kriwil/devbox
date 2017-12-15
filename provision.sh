@@ -12,22 +12,30 @@ apt-get install -y \
     tmux \
     zsh
 
+# go
+add-apt-repository -y ppa:longsleep/golang-backports
+
 # docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 apt-key fingerprint 0EBFCD88
-add-apt-repository \
+add-apt-repository -y \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
 
 # neovim
-add-apt-repository ppa:neovim-ppa/stable
+add-apt-repository -y ppa:neovim-ppa/stable
 
 apt-get update
-apt-get install -y docker neovim
+apt-get install -y docker neovim golang-go
 
 apt-get -y upgrade
 
 ln -s /home/ubuntu/dotfiles/zshrc.linux /home/ubuntu/.zshrc
+ln -s /home/ubuntu/dotfiles/tmux.conf /home/ubuntu/.tmux.conf
 
 chsh -s /usr/bin/zsh ubuntu
+
+# git & friends
+go get -u github.com/github/hub
+go get -u github.com/zaquestion/lab
