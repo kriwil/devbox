@@ -4,6 +4,7 @@
 
 ubuntu 16.04
 
+- docker
 - neovim
 - tmux
-- docker repository
+- zsh
