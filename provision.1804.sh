@@ -1,4 +1,4 @@
-#!/bin/sh
+
 # this assumes the public key is created and uploaded to github
 OMZ_REPO=git@github.com:kriwil/oh-my-zsh.git
 WORKSPACE=$HOME/Workspace
@@ -30,7 +30,3 @@ mkdir -p $NVIM_CONFIG
 ln -s $DOTFILES_DIR/vimrc $HOME/.config/nvim/init.vim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-echo "python"
-sudo add-apt-repository -y ppa:jonathonf/python-3.6
-sudo apt-get update -y
-sudo apt-get install -y python3.6
