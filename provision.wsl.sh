@@ -44,3 +44,9 @@ add-apt-repository -y \
    stable"
 sudo apt-get update -y
 sudo apt-get install -y docker-ce
+# Allow your user to access the Docker CLI without needing root.
+sudo usermod -aG docker $USER
+
+# Install Docker Compose.
+DOCKER_COMPOSE_VERSION=1.21.2 sudo curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
