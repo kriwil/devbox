@@ -17,7 +17,7 @@ echo "zsh"
 sudo apt-get update -y
 sudo apt-get install -y zsh direnv
 git clone $OMZ_REPO $HOME/.oh-my-zsh
-ln -s $DOTFILES_DIR/zshrc.linux $HOME/.zshrc
+ln -s $DOTFILES_DIR/zshrc.wsl $HOME/.zshrc
 sudo chsh -s `which zsh` $USER
 
 echo "vim"
@@ -34,3 +34,13 @@ echo "python"
 sudo add-apt-repository -y ppa:jonathonf/python-3.6
 sudo apt-get update -y
 sudo apt-get install -y python3.6
+
+echo "docker"
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+apt-key fingerprint 0EBFCD88
+add-apt-repository -y \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+sudo apt-get update -y
+sudo apt-get install -y docker
