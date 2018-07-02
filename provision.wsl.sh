@@ -43,4 +43,4 @@ add-apt-repository -y \
    $(lsb_release -cs) \
    stable"
 sudo apt-get update -y
-sudo apt-get install -y docker
+sudo apt-get install -y docker-ce

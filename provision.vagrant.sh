@@ -29,7 +29,7 @@ add-apt-repository -y \
 add-apt-repository -y ppa:neovim-ppa/stable
 
 apt-get update
-apt-get install -y docker neovim golang-go
+apt-get install -y docker-ce neovim golang-go
 
 apt-get -y upgrade
 
