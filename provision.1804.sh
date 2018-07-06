@@ -6,21 +6,23 @@ DOTFILES_DIR=$WORKSPACE/dotfiles
 DOTFILES_REPO=git@github.com:kriwil/dotfiles.git
 NVIM_CONFIG=$HOME/.config/nvim
 
-echo "dotfiles"
+echo "... setup"
+sudo apt-get update -y
+sudo apt-get install -y zsh direnv curl git tmux
+
+echo "... dotfiles"
 mkdir -p $DOTFILES_DIR
 git clone $DOTFILES_REPO $DOTFILES_DIR
 ln -s $DOTFILES_DIR/gitconfig $HOME/.gitconfig
 ln -s $DOTFILES_DIR/gitignore_global $HOME/.gitignore_global
 ln -s $DOTFILES_DIR/tmux.conf $HOME/.tmux.conf
 
-echo "zsh"
-sudo apt-get update -y
-sudo apt-get install -y zsh direnv
+echo "... zsh"
 git clone $OMZ_REPO $HOME/.oh-my-zsh
 ln -s $DOTFILES_DIR/zshrc.linux $HOME/.zshrc
 sudo chsh -s `which zsh` $USER
 
-echo "vim"
+echo "... vim"
 # install
 sudo apt-add-repository -y ppa:neovim-ppa/stable
 sudo apt-get update -y
