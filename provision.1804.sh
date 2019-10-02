@@ -30,5 +30,6 @@ sudo apt-get install -y python-dev python-pip python3-dev python3-pip neovim
 # config
 mkdir -p $NVIM_CONFIG
 ln -s $DOTFILES_DIR/vimrc $HOME/.config/nvim/init.vim
+ln -s $DOTFILES_DIR/vimrc.python36 $HOME/.vimrc.python
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
