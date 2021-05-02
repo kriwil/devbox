@@ -8,12 +8,6 @@ NVIM_CONFIG=$HOME/.config/nvim
 echo "... setup"
 sudo apt-get update -y
 sudo apt-get install -y zsh direnv curl git tmux
-# if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    # sudo apt-get update -y
-    # sudo apt-get install -y zsh direnv curl git tmux
-# elif [[ "$OSTYPE" == "darwin"* ]]; then
-    # brew install zsh direnv curl git tmux hub neovim
-# fi
 
 echo "... dotfiles"
 mkdir -p $DOTFILES_DIR
@@ -26,6 +20,15 @@ echo "... zsh"
 git clone $OMZ_REPO $HOME/.oh-my-zsh
 ln -s $DOTFILES_DIR/zshrc.linux $HOME/.zshrc
 sudo chsh -s `which zsh` $USER
+
+echo "... asdf"
+git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.8.0
+
+echo "... gh"
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+sudo apt-add-repository https://cli.github.com/packages
+sudo apt update
+sudo apt install gh
 
 echo "... vim"
 # install
