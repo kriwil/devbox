@@ -20,7 +20,7 @@ mkdir -p $DOTFILES_DIR
 git clone $DOTFILES_REPO $DOTFILES_DIR
 ln -s $DOTFILES_DIR/gitconfig $HOME/.gitconfig
 ln -s $DOTFILES_DIR/gitignore_global $HOME/.gitignore_global
-ln -s $DOTFILES_DIR/tmux.conf $HOME/.tmux.conf
+ln -s $DOTFILES_DIR/tmux.conf $HOME/.tmux.remote.conf
 
 echo "... zsh"
 git clone $OMZ_REPO $HOME/.oh-my-zsh
